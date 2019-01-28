@@ -12,7 +12,7 @@ function get_post_counter()
 add_action( 'init', 'register_animals_post_type' );
 function register_animals_post_type() {
     // Раздел "собак" - dogscat
-    register_taxonomy('dogs_profile', array('dogs'), array(
+    /*register_taxonomy('dogs_profile', array('dogs'), array(
         'label'                 => 'Category of notes', // определяется параметром $labels->name
         'labels'                => array(
             'name'              => 'Category of notes',
@@ -35,7 +35,7 @@ function register_animals_post_type() {
         'hierarchical'          => true,
         'rewrite'               => array('slug'=>'dogs', 'hierarchical'=>false, 'with_front'=>false, 'feed'=>false ),
         'show_admin_column'     => true, // Позволить или нет авто-создание колонки таксономии в таблице ассоциированного типа записи. (с версии 3.5)
-    ) );
+    ) );*/
 
     // тип записи - собаки - dogs
     register_post_type('dogs', array(
@@ -70,7 +70,7 @@ function register_animals_post_type() {
         'taxonomies'          => array( 'dogscat' ),
     ) );
 // Раздел "кошек" - catscat
-    register_taxonomy('cats_profile', array('cats'), array(
+    /*register_taxonomy('cats_profile', array('cats'), array(
         'label'                 => 'Category of notes', // определяется параметром $labels->name
         'labels'                => array(
             'name'              => 'Category of notes',
@@ -93,7 +93,7 @@ function register_animals_post_type() {
         'hierarchical'          => true,
         'rewrite'               => array('slug'=>'cats', 'hierarchical'=>false, 'with_front'=>false, 'feed'=>false ),
         'show_admin_column'     => true, // Позволить или нет авто-создание колонки таксономии в таблице ассоциированного типа записи. (с версии 3.5)
-    ) );
+    ) );*/
 
     // тип записи - кошки - cats
     register_post_type('cats', array(

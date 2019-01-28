@@ -51,7 +51,7 @@
 		) );
         the_tags();
 		?>
-	</div><!-- .entry-content -->
+	</div><!--.entry-content-->
 
 	<?php
 	if ( is_single() ) {
