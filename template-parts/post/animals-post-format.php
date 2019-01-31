@@ -4,11 +4,11 @@
 
 <img src="<?php the_field('photo'); ?>">
 
-<p>
+<div>
     <?php the_field('description'); ?>
-</p>
+</div>
 
-<p>
+<div>
     Age: <?php the_field('age');?>
-</p>
+</div>
 

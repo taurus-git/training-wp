@@ -38,7 +38,7 @@ function register_animals_post_type() {
         'map_meta_cap'        => true,
         'hierarchical'        => false,
         'rewrite'             => array( 'slug'=>'dogs/%dogscat%', 'with_front'=>false, 'pages'=>false, 'feeds'=>false, 'feed'=>false ),
-        'has_archive'         => 'dogs',
+        'has_archive'         => 'true',
         'query_var'           => true,
         'supports'            => array( 'title', 'custom-fields'),
     ) );
@@ -70,7 +70,7 @@ function register_animals_post_type() {
         'map_meta_cap'        => true,
         'hierarchical'        => false,
         'rewrite'             => array( 'slug'=>'cats/%catscat%', 'with_front'=>false, 'pages'=>false, 'feeds'=>false, 'feed'=>false ),
-        'has_archive'         => 'cats',
+        'has_archive'         => 'true',
         'query_var'           => true,
         'supports'            => array( 'title', 'custom-fields'),
     ) );
