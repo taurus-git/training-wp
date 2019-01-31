@@ -9,26 +9,18 @@
  * @since 1.0
  * @version 1.0
  */
-
 get_header(); ?>
 
     <div class="wrap">
         <div id="primary" class="content-area">
             <main id="main" class="site-main" role="main">
-
-                <?php
-                //ACF
-
-                the_field('description');
-                the_field('age'); ?>
-
-                <img src="<?php the_field('photo'); ?>"
-
                 <?php
                 /* Start the Loop */
                 while ( have_posts() ) : the_post();
-
-                    get_template_part( 'template-parts/post/content', get_post_format() );
+                if( is_singular( array('dogs', 'cats') ) ){
+                    get_template_part( 'template-parts/post/animals-post-format', get_post_format() );
+                    }
+                else { get_template_part( 'template-parts/post/content', get_post_format() ); }
 
                     // If comments are open or we have at least one comment, load up the comment template.
                     if ( comments_open() || get_comments_number() ) :
@@ -49,3 +41,4 @@ get_header(); ?>
     </div><!-- .wrap -->
 
 <?php get_footer();
+
