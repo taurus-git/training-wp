@@ -1,14 +1,4 @@
 <?php
-/**
- * The template for displaying all single posts
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
- *
- * @package WordPress
- * @subpackage Twenty_Seventeen
- * @since 1.0
- * @version 1.0
- */
 get_header(); ?>
 
     <div class="wrap">
@@ -18,7 +8,7 @@ get_header(); ?>
                 /* Start the Loop */
                 while (have_posts()) : the_post();
                     if (is_singular(array('dogs', 'cats'))) {
-                        get_template_part('template-parts/post/animals-post-format', get_post_format());
+                        get_template_part('template-parts/post/animals-post-format');
                     } else {
                         get_template_part('template-parts/post/content', get_post_format());
                     }

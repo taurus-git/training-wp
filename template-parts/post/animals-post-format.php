@@ -1,5 +1,5 @@
 <h1>
-    <?php the_title(); ?>
+    <?php the_title( '<h3 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' ); ?>
 </h1>
 
 <img src="<?php the_field('photo'); ?>">
