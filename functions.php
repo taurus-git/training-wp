@@ -3,14 +3,37 @@ function get_post_counter()
 {
     global $wpdb;
     $post_counter = intval($wpdb->get_var("SELECT count(*) FROM $wpdb->posts WHERE post_status = 'publish' AND post_type = 'post'"));
-
     return $post_counter;
 }
-
 //Custom post types
-
 add_action( 'init', 'register_animals_post_type' );
 function register_animals_post_type() {
+    // register taxonomy for note type - "dogs"
+    register_taxonomy('dogscat', array('dogs_breed'), array(
+        'label'                 => 'Category of breeds',
+        'labels'                => array(
+            'name'              => 'Category of breeds',
+            'singular_name'     => 'Category of breed',
+            'search_items'      => 'Find category of breeds',
+            'all_items'         => 'All categories of breeds',
+            'parent_item'       => 'Parent category of breed',
+            'parent_item_colon' => 'Parent category of breed:',
+            'edit_item'         => 'Edit category of breed',
+            'update_item'       => 'Update Category of breed',
+            'add_new_item'      => 'Add Category of breed',
+            'new_item_name'     => 'New category of breed',
+            'menu_name'         => 'Add category',
+        ),
+        'description'           => 'Rubric for category of breeds',
+        'public'                => true,
+        'show_in_nav_menus'     => false,
+        'show_ui'               => true,
+        'show_tagcloud'         => false,
+        'hierarchical'          => true,
+        'rewrite'               => array('slug'=>'dogs', 'hierarchical'=>false, 'with_front'=>false, 'feed'=>false ),
+        'show_admin_column'     => true,
+    ) );
+
     // note type - "dogs"
     register_post_type('dogs', array(
         'label'               => 'Notes',
@@ -28,21 +51,18 @@ function register_animals_post_type() {
         'description'         => '',
         'menu_icon'           => 'dashicons-smiley',
         'public'              => true,
-        'publicly_queryable'  => true,
-        'show_ui'             => true,
         'show_in_rest'        => false,
         'rest_base'           => '',
         'show_in_menu'        => true,
-        'exclude_from_search' => false,
         'capability_type'     => 'post',
         'map_meta_cap'        => true,
         'hierarchical'        => false,
         'rewrite'             => array( 'slug'=>'dogs/%dogscat%', 'with_front'=>false, 'pages'=>false, 'feeds'=>false, 'feed'=>false ),
-        'has_archive'         => 'true',
+        'has_archive'         => true,
         'query_var'           => true,
         'supports'            => array( 'title', 'custom-fields'),
+        'taxonomies'          => array( 'dogscat' ),
     ) );
-
     // note type - cats
     register_post_type('cats', array(
         'label'               => 'Notes',
@@ -60,21 +80,16 @@ function register_animals_post_type() {
         'description'         => '',
         'menu_icon'           => 'dashicons-palmtree',
         'public'              => true,
-        'publicly_queryable'  => true,
-        'show_ui'             => true,
         'show_in_rest'        => false,
         'rest_base'           => '',
         'show_in_menu'        => true,
-        'exclude_from_search' => false,
         'capability_type'     => 'post',
         'map_meta_cap'        => true,
         'hierarchical'        => false,
         'rewrite'             => array( 'slug'=>'cats/%catscat%', 'with_front'=>false, 'pages'=>false, 'feeds'=>false, 'feed'=>false ),
-        'has_archive'         => 'true',
+        'has_archive'         => true,
         'query_var'           => true,
         'supports'            => array( 'title', 'custom-fields'),
     ) );
-
 }
-
 ?>
