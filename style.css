@@ -16,3 +16,21 @@ Version:        0.1.0
 .menu-menu-container a{
     color: #F0F8FF;
 }
+h3.entry-title {
+    display: inline-block;
+    width: 80%;
+}
+.entry-title-author {
+    display: inline-block;
+    width: 20%;
+    text-align: right;
+}
+
+.category-cats a{
+    color: red;
+    /*color: #2d3136;*/
+}
+.category-cats {
+    color: red;
+    /*color: #2d3136;*/
+}
