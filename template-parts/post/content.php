@@ -24,6 +24,10 @@
 		} else {
 			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		}
+
+        $author = get_the_author();
+        echo "by: ". $author;
+
 		?>
 	</header><!-- .entry-header -->
 
@@ -36,9 +40,9 @@
 	<?php endif; ?>
 
 	<div class="entry-content">
-		<?php
+        <?php
 		/* translators: %s: Name of current post */
-		the_content( sprintf(
+        the_content( sprintf(
 			__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'twentyseventeen' ),
 			get_the_title()
 		) );
