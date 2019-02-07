@@ -16,10 +16,6 @@ if (is_front_page() || is_home()) {
 if (is_category()) {
     echo '<meta name="description" content="category archive">';
 } ?>
-<?php
-if (is_single() || is_post_type_archive()) {
-    echo '<meta name="description" content="single post">';
-} ?>
 </head>
 
 <body <?php body_class(); ?>>
