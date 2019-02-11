@@ -19,11 +19,8 @@
 		if ( is_single() ) {
 			the_title( '<h1 class="entry-title">', '</h1>' );
 		} elseif ( is_front_page() && is_home() ) {
-            if( in_category('cats') ) {
-                the_title( '<h3 class="entry-title"><a class="myclass" href="' . esc_url(get_permalink()) . ' " rel="bookmark">',  ' by: ' . get_the_author() . '</a></h3>' );
-            } else {
-                the_title( '<h3 class="entry-title"><a href="' . esc_url(get_permalink()) . ' " rel="bookmark">',  ' by: ' . get_the_author() . '</a></h3>' );
-            }
+            $class = ( in_category('cats') ) ? 'class="colorful-title"' : '';
+		    the_title( '<h3 class="entry-title"><a ' . $class . 'href="' . esc_url(get_permalink()) . ' " rel="bookmark">',  ' by: ' . get_the_author() . '</a></h3>' );
 		} else {
 			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		}
