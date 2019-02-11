@@ -13,9 +13,3 @@
 <div>
     <b>Age: </b><?php the_field('age'); ?>
 </div>
-<div>
-    <?php
-        $mypost_date = the_date('M j, Y', '<b>Date: </b>');
-        echo $mypost_date;
-    ?>
-</div>
