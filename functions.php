@@ -104,5 +104,4 @@ function register_my_widgets() {
         'after_title'   => '</h2>',
     ) );
 }
-
 ?>

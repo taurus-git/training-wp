@@ -54,7 +54,15 @@ get_header(); ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
-	<?php dynamic_sidebar('right-sidebar'); ?>
+    <?php if ( is_active_sidebar( 'right-sidebar' ) ) : ?>
+
+        <div id="right-sidebar" class="sidebar right-sidebar-container">
+
+            <?php dynamic_sidebar( 'right-sidebar' ); ?>
+
+        </div>
+
+    <?php endif; ?>
 </div><!-- .wrap -->
 
 <?php get_footer();

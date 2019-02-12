@@ -19,6 +19,11 @@ Version:        0.1.0
 a.colorful-title{
     color: #787b80;
 }
+.right-sidebar-container{
+    float: right;
+    padding-top: 0;
+    width: 36%;
+}
 .right-sidebar{
     color: #ffffff;
     text-align: center;
