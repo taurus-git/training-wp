@@ -92,4 +92,17 @@ function register_animals_post_type() {
         'supports'            => array( 'title', 'custom-fields'),
     ) );
 }
+add_action( 'widgets_init', 'register_my_widgets' );
+function register_my_widgets() {
+    register_sidebar( array(
+        'name' => __( 'Main Sidebar', 'theme-slug' ),
+        'id' => 'right-sidebar',
+        'description' => __( 'Widgets in this area will be shown on all posts and pages.', 'theme-slug' ),
+        'before_widget' => '<div class="right-sidebar">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="widgettitle">',
+        'after_title'   => '</h2>',
+    ) );
+}
+
 ?>

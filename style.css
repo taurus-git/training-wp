@@ -19,3 +19,9 @@ Version:        0.1.0
 a.colorful-title{
     color: #787b80;
 }
+.right-sidebar{
+    color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+    background-color: #FFA500;
+}
