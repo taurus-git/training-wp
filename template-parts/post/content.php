@@ -10,7 +10,9 @@
 			echo '<div class="entry-meta">';
 				if ( is_single() ) {
 					twentyseventeen_posted_on();
-				} else {
+				} elseif ( is_archive() ) {
+                    the_time('M m, Y');
+                } else {
 					echo twentyseventeen_time_link();
 					twentyseventeen_edit_link();
 				};
