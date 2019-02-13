@@ -39,20 +39,28 @@
 
 	<div class="entry-content">
         <?php
-		/* translators: %s: Name of current post */
-        the_content( sprintf(
-			__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'twentyseventeen' ),
-			get_the_title()
-		) );
+        if (is_archive()) {
+            the_excerpt( printf(
+                __( '<span class="screen-reader-text"> "%s"</span>', 'twentyseventeen' ),
+                get_the_title()
+            ) );
+            do_action('excerpt_more');
+            the_tags();
+        } else {
+            /* translators: %s: Name of current post */
+            the_content(sprintf(
+                __('Continue reading<span class="screen-reader-text"> "%s"</span>', 'twentyseventeen'),
+                get_the_title()
+            ));
 
-		wp_link_pages( array(
-			'before'      => '<div class="page-links">' . __( 'Pages:', 'twentyseventeen' ),
-			'after'       => '</div>',
-			'link_before' => '<span class="page-number">',
-			'link_after'  => '</span>',
-		) );
+            wp_link_pages( array(
+                'before'      => '<div class="page-links">' . __( 'Pages:', 'twentyseventeen' ),
+                'after'       => '</div>',
+                'link_before' => '<span class="page-number">',
+                'link_after'  => '</span>',
+        ) );
         the_tags();
-		?>
+        ?>
 
 	</div><!--.entry-content-->
 

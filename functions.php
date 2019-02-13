@@ -104,4 +104,10 @@ function register_my_widgets() {
         'after_title'   => '</h2>',
     ) );
 }
+// Replaces the excerpt "Read More" text by a link
+function new_excerpt_more($more) {
+    global $post;
+    return '<a class="moretag" href="'. get_permalink($post->ID) . '">...</a>';
+}
+add_action('excerpt_more', 'new_excerpt_more', 99);
 ?>
