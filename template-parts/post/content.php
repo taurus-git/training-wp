@@ -44,7 +44,6 @@
                 __( '<span class="screen-reader-text"> "%s"</span>', 'twentyseventeen' ),
                 get_the_title()
             ) );
-            do_action('excerpt_more');
         } else {
             /* translators: %s: Name of current post */
             the_content(sprintf(
