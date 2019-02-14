@@ -45,7 +45,6 @@
                 get_the_title()
             ) );
             do_action('excerpt_more');
-            the_tags();
         } else {
             /* translators: %s: Name of current post */
             the_content(sprintf(
@@ -58,7 +57,7 @@
                 'after'       => '</div>',
                 'link_before' => '<span class="page-number">',
                 'link_after'  => '</span>',
-        ) );
+        ) );}
         the_tags();
         ?>
 

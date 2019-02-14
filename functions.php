@@ -104,6 +104,9 @@ function register_my_widgets() {
         'after_title'   => '</h2>',
     ) );
 }
+add_filter( 'excerpt_length', function(){
+    return 15;
+} );
 // Replaces the excerpt "Read More" text by a link
 function new_excerpt_more($more) {
     global $post;
