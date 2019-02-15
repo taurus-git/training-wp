@@ -9,6 +9,9 @@
  * @since 1.0
  * @version 1.0
  */
+global $query_string;
+query_posts($query_string . "&orderby=title&order=DESC");
+
 get_header(); ?>
 
 <div class="wrap">
@@ -28,11 +31,8 @@ get_header(); ?>
                 $order_posts = get_query_var('order') . '<br>';
                 print_r($order_posts);
 
-                $posts_date = get_query_var('date') . '<br>';
-                print_r($posts_date);
-
-                global $query_string;
-                query_posts($query_string . "&orderby=title&order=DESC");
+                $order_posts_by = get_query_var('orderby') . '<br>';
+                print_r($order_posts_by);
 			?>
 		</header><!-- .page-header -->
 	<?php endif; ?>
