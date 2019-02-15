@@ -31,14 +31,8 @@ get_header(); ?>
                 $posts_date = get_query_var('date') . '<br>';
                 print_r($posts_date);
 
-                if ( is_category( 'cats' ) ) {
-                    query_posts('category_name=cats&orderby=title&order=DESC');
-                } else if ( is_category( 'dogs' ) ) {
-                    query_posts('category_name=dogs&orderby=title&order=DESC');
-                } else {
-                    query_posts('orderby=title&order=DESC');
-                }
-
+                global $query_string;
+                query_posts($query_string . "&orderby=title&order=DESC");
 			?>
 		</header><!-- .page-header -->
 	<?php endif; ?>
